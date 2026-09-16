@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="local_debug.LocalDebugSnapshotDialog">
+        <Dialog title="'Local Debug Snapshot'" size="'md'">
+            <div class="container-fluid px-0">
+                <t t-foreach="props.lines" t-as="line" t-key="line.label">
+                    <div class="row g-2 py-1 border-bottom border-light-subtle">
+                        <div class="col-4 text-muted small" t-esc="line.label"/>
+                        <div class="col-8 o_local_debug_snapshot_value">
+                            <span class="font-monospace" t-esc="line.value"/>
+                        </div>
+                    </div>
+                </t>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-secondary" t-on-click="props.close">Close</button>
+            </t>
+        </Dialog>
+    </t>
+</templates>

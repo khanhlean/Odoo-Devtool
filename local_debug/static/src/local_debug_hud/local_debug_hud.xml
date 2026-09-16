@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="local_debug.LocalDebugHUD">
+        <div
+            t-att-class="'o_local_debug_strip ' + localDebugThemeClass + ' ' + (localDebugHud.hudCollapsed ? 'o_local_debug_strip--collapsed' : '')"
+        >
+            <div
+                class="o_local_debug_strip_inner"
+            >
+                <div
+                    t-ref="localDebugSwitch"
+                    t-att-class="'o_local_debug_debug_switch ' + (localDebugHud.debugControlsOpen ? 'o_local_debug_debug_switch--open' : '')"
+                >
+                    <button
+                        type="button"
+                        class="o_local_debug_chip o_local_debug_chip--toggle"
+                        t-att-aria-expanded="localDebugHud.debugControlsOpen ? 'true' : 'false'"
+                        t-att-title="'Open debug controls. Sync: ' + localDebugSyncLabel + '. Current mode: ' + localDebugDebugLabel"
+                        t-on-click="() => this.toggleLocalDebugControls()"
+                    >
+                        <span
+                            t-if="localDebugRuntimeInfo.pollRuntime"
+                            t-att-class="'o_local_debug_sync_dot ' + localDebugSyncDotClass"
+                            t-att-title="localDebugSyncTitle"
+                        />
+                        <i class="fa fa-sliders"/>
+                        <span class="o_local_debug_chip_body">
+                            <span class="o_local_debug_key">Debug</span>
+                            <span
+                                class="o_local_debug_value"
+                                t-esc="localDebugDebugLabel"
+                            />
+                        </span>
+                        <span class="o_local_debug_chip_actions">
+                            <span class="o_local_debug_chip_toggle_icon">
+                                <i
+                                    t-att-class="'fa ' + (localDebugHud.debugControlsOpen ? 'fa-chevron-up' : 'fa-chevron-down')"
+                                />
+                            </span>
+                        </span>
+                    </button>
+
+                    <t t-if="localDebugHud.debugControlsOpen">
+                        <div class="o_local_debug_debug_switch_panel">
+                            <div class="o_local_debug_debug_switch_meta">
+                                <div class="o_local_debug_debug_switch_header">
+                                    <span class="o_local_debug_debug_switch_title">Debug Controls</span>
+                                    <span
+                                        t-att-class="'o_local_debug_badge ' + localDebugDevBadgeClass"
+                                        t-att-title="'Current server --dev flags: ' + localDebugDevModeLabel"
+                                    >
+                                        <span class="o_local_debug_badge_key">DEV</span>
+                                        <span class="o_local_debug_badge_value" t-esc="localDebugDevModeLabel"/>
+                                    </span>
+                                    <div class="o_local_debug_help o_local_debug_help--panel">
+                                        <button
+                                            type="button"
+                                            class="o_local_debug_help_trigger"
+                                            aria-label="Debug and dev mode guide"
+                                            title="Debug and dev mode guide"
+                                        >
+                                            <i class="fa fa-question-circle"/>
+                                        </button>
+                                        <div class="o_local_debug_help_popover">
+                                            <div class="o_local_debug_help_title">Debug Mode Guide</div>
+                                            <div class="o_local_debug_help_line">
+                                                <code>debug=1</code>:
+                                                bật technical UI, debug menu và thông tin kỹ thuật để inspect.
+                                            </div>
+                                            <div class="o_local_debug_help_line">
+                                                <code>debug=assets</code>:
+                                                dùng khi sửa JS/SCSS/assets frontend; bundle không minify và asset file đổi sẽ được rebuild.
+                                            </div>
+                                            <div class="o_local_debug_help_line">
+                                                <code>debug=assets,tests</code>:
+                                                dùng cho test assets, tours và frontend test tooling.
+                                            </div>
+                                            <div class="o_local_debug_help_line">
+                                                <code>--dev=xml</code>:
+                                                dùng khi sửa XML/QWeb trong source; Odoo đọc view từ file thay vì DB.
+                                            </div>
+                                            <div class="o_local_debug_help_line">
+                                                <code>--dev=reload</code>:
+                                                tự restart server khi source đổi; hiệu quả nhất cho Python nhưng cần watcher như <code>watchdog</code>.
+                                            </div>
+                                            <div class="o_local_debug_help_line">
+                                                <code>--dev=qweb</code>, <code>--dev=access</code>:
+                                                dùng khi cần traceback QWeb hoặc access error chi tiết hơn.
+                                            </div>
+                                            <div class="o_local_debug_help_line">
+                                                Đổi Python/model/security/data/manifest:
+                                                vẫn phải restart server, và nhiều trường hợp cần <code>-u module_name</code>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="o_local_debug_chip_actions o_local_debug_debug_switch_actions">
+                                <button
+                                    type="button"
+                                    t-att-class="'o_local_debug_chip_action o_local_debug_chip_action--label ' + (this.isLocalDebugModeActive('') ? 'o_local_debug_chip_action--active' : '')"
+                                    title="Disable debug mode"
+                                    t-on-click="() => this.switchLocalDebugMode('')"
+                                >
+                                    Off
+                                </button>
+                                <button
+                                    type="button"
+                                    t-att-class="'o_local_debug_chip_action o_local_debug_chip_action--label ' + (this.isLocalDebugModeActive('1') ? 'o_local_debug_chip_action--active' : '')"
+                                    title="Activate debug mode"
+                                    t-on-click="() => this.switchLocalDebugMode('1')"
+                                >
+                                    1
+                                </button>
+                                <button
+                                    type="button"
+                                    t-att-class="'o_local_debug_chip_action o_local_debug_chip_action--label ' + (this.isLocalDebugModeActive('assets') ? 'o_local_debug_chip_action--active' : '')"
+                                    title="Activate debug with assets"
+                                    t-on-click="() => this.switchLocalDebugMode('assets')"
+                                >
+                                    Assets
+                                </button>
+                                <button
+                                    type="button"
+                                    t-att-class="'o_local_debug_chip_action o_local_debug_chip_action--label ' + (this.isLocalDebugModeActive('assets,tests') ? 'o_local_debug_chip_action--active' : '')"
+                                    title="Activate tests assets mode"
+                                    t-on-click="() => this.switchLocalDebugMode('assets,tests')"
+                                >
+                                    Tests
+                                </button>
+                                <button
+                                    type="button"
+                                    class="o_local_debug_chip_action o_local_debug_chip_action--label"
+                                    title="Regenerate asset bundles and reload"
+                                    t-on-click="() => this.regenerateLocalDebugAssets()"
+                                >
+                                    Regen
+                                </button>
+                                <button
+                                    type="button"
+                                    class="o_local_debug_chip_action o_local_debug_chip_action--label"
+                                    title="Run a local ORM search_count loop to test N+1 detection"
+                                    t-on-click="() => this.triggerLocalDebugNPlusOneTest()"
+                                >
+                                    N+1
+                                </button>
+                            </span>
+                        </div>
+                    </t>
+                </div>
+
+                <t t-call="local_debug.LocalDebugHUDMetric"/>
+
+                <button
+                    type="button"
+                    t-att-class="'o_local_debug_chip o_local_debug_chip--toggle ' + localDebugChatterChipClass"
+                    t-att-title="localDebugChatterTitle"
+                    t-on-click="() => this.toggleLocalDebugChatterDisabled()"
+                >
+                    <i t-att-class="localDebugChatterIconClass"/>
+                    <span class="o_local_debug_chip_body">
+                        <span class="o_local_debug_key">Chatter</span>
+                        <span
+                            class="o_local_debug_value"
+                            t-esc="localDebugChatterLabel"
+                        />
+                    </span>
+                </button>
+
+                <t t-if="localDebugHud.model">
+                    <div class="o_local_debug_chip o_local_debug_chip--static">
+                        <i class="fa fa-cube"/>
+                        <span class="o_local_debug_chip_body">
+                            <span class="o_local_debug_key">Model</span>
+                            <span
+                                class="o_local_debug_value"
+                                t-esc="localDebugHud.model"
+                            />
+                        </span>
+                        <span class="o_local_debug_chip_actions">
+                            <button
+                                type="button"
+                                class="o_local_debug_chip_action"
+                                title="Open model definition"
+                                t-on-click="() => this.openLocalDebugModelRecord()"
+                            >
+                                <i class="fa fa-bug"/>
+                            </button>
+                            <button
+                                type="button"
+                                class="o_local_debug_chip_action"
+                                title="Copy model name"
+                                t-on-click="() => this.copyLocalDebugValue(localDebugHud.model, 'model')"
+                            >
+                                <i class="fa fa-copy"/>
+                            </button>
+                        </span>
+                    </div>
+                </t>
+
+                <t t-if="localDebugHud.view">
+                    <div class="o_local_debug_chip o_local_debug_chip--static">
+                        <i class="fa fa-file-code-o"/>
+                        <span class="o_local_debug_chip_body">
+                            <span class="o_local_debug_key">View</span>
+                            <span
+                                class="o_local_debug_value"
+                                t-esc="localDebugHud.view"
+                            />
+                        </span>
+                        <span class="o_local_debug_chip_actions">
+                            <button
+                                type="button"
+                                class="o_local_debug_chip_action"
+                                title="Open current view definition"
+                                t-on-click="() => this.openLocalDebugViewRecord()"
+                            >
+                                <i class="fa fa-bug"/>
+                            </button>
+                            <button
+                                type="button"
+                                class="o_local_debug_chip_action"
+                                title="Open computed arch"
+                                t-on-click="() => this.openLocalDebugComputedArch()"
+                            >
+                                <i class="fa fa-code"/>
+                            </button>
+                            <button
+                                type="button"
+                                class="o_local_debug_chip_action"
+                                title="Copy resolved view reference"
+                                t-on-click="() => this.copyLocalDebugValue(localDebugHud.view, 'view')"
+                            >
+                                <i class="fa fa-copy"/>
+                            </button>
+                        </span>
+                    </div>
+                </t>
+
+                <t t-if="localDebugHud.model">
+                    <div class="o_local_debug_chip o_local_debug_chip--static">
+                        <i class="fa fa-list-alt"/>
+                        <span class="o_local_debug_chip_body">
+                            <span class="o_local_debug_key">Fields</span>
+                            <span class="o_local_debug_value">Fields</span>
+                        </span>
+                        <span class="o_local_debug_chip_actions">
+                            <button
+                                type="button"
+                                class="o_local_debug_chip_action"
+                                title="Open model fields"
+                                t-on-click="() => this.openLocalDebugFields()"
+                            >
+                                <i class="fa fa-bug"/>
+                            </button>
+                        </span>
+                    </div>
+
+                    <div class="o_local_debug_chip o_local_debug_chip--static">
+                        <i class="fa fa-filter"/>
+                        <span class="o_local_debug_chip_body">
+                            <span class="o_local_debug_key">Filters</span>
+                            <span class="o_local_debug_value">Filters</span>
+                        </span>
+                        <span class="o_local_debug_chip_actions">
+                            <button
+                                type="button"
+                                class="o_local_debug_chip_action"
+                                title="Open filters"
+                                t-on-click="() => this.openLocalDebugFilters()"
+                            >
+                                <i class="fa fa-bug"/>
+                            </button>
+                        </span>
+                    </div>
+                </t>
+
+                <t t-if="localDebugHud.model">
+                    <div class="o_local_debug_chip o_local_debug_chip--static">
+                        <i class="fa fa-search"/>
+                        <span class="o_local_debug_chip_body">
+                            <span class="o_local_debug_key">Search</span>
+                            <span
+                                class="o_local_debug_value"
+                                t-esc="localDebugHud.search || 'SearchView'"
+                            />
+                        </span>
+                        <span class="o_local_debug_chip_actions">
+                            <button
+                                type="button"
+                                class="o_local_debug_chip_action"
+                                title="Open current search view definition"
+                                t-on-click="() => this.openLocalDebugSearchViewRecord()"
+                            >
+                                <i class="fa fa-bug"/>
+                            </button>
+                            <button
+                                type="button"
+                                class="o_local_debug_chip_action"
+                                title="Copy resolved search view reference"
+                                t-on-click="() => this.copyLocalDebugValue(localDebugHud.search || 'SearchView', 'search view')"
+                            >
+                                <i class="fa fa-copy"/>
+                            </button>
+                        </span>
+                    </div>
+                </t>
+
+                <t t-if="localDebugHud.action">
+                    <div class="o_local_debug_chip o_local_debug_chip--static">
+                        <i class="fa fa-bolt"/>
+                        <span class="o_local_debug_chip_body">
+                            <span class="o_local_debug_key">Action</span>
+                            <span
+                                class="o_local_debug_value"
+                                t-esc="localDebugHud.action"
+                            />
+                        </span>
+                        <span class="o_local_debug_chip_actions">
+                            <button
+                                type="button"
+                                class="o_local_debug_chip_action"
+                                title="Open action definition"
+                                t-on-click="() => this.openLocalDebugActionRecord()"
+                            >
+                                <i class="fa fa-bug"/>
+                            </button>
+                            <button
+                                type="button"
+                                class="o_local_debug_chip_action"
+                                title="Copy action reference"
+                                t-on-click="() => this.copyLocalDebugValue(localDebugHud.action, 'action')"
+                            >
+                                <i class="fa fa-copy"/>
+                            </button>
+                        </span>
+                    </div>
+                </t>
+            </div>
+            <button
+                type="button"
+                class="o_local_debug_collapse_toggle"
+                t-att-aria-label="localDebugHud.hudCollapsed ? 'Show local debug HUD' : 'Collapse local debug HUD'"
+                t-att-aria-expanded="localDebugHud.hudCollapsed ? 'false' : 'true'"
+                t-att-title="localDebugHud.hudCollapsed ? 'Show local debug HUD' : 'Collapse local debug HUD'"
+                t-on-click="() => this.toggleLocalDebugHudCollapsed()"
+            >
+                <i t-att-class="'fa ' + (localDebugHud.hudCollapsed ? 'fa-chevron-down' : 'fa-chevron-up')"/>
+            </button>
+        </div>
+    </t>
+</templates>

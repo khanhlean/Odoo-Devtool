@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="moveo_sql_console_client_action" model="ir.actions.client">
+        <field name="name">SQL Console</field>
+        <field name="tag">local_debug.sql_console</field>
+    </record>
+
+    <menuitem
+        id="menu_moveo_local_debug_root"
+        name="Local Debug"
+        sequence="90"
+        web_icon="local_debug,static/description/icon.png"
+    />
+
+    <menuitem
+        id="menu_moveo_sql_console"
+        name="SQL Console"
+        parent="local_debug.menu_moveo_local_debug_root"
+        action="moveo_sql_console_client_action"
+        sequence="10"
+    />
+</odoo>

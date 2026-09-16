@@ -1,0 +1,332 @@
+.o_content.o_moveo_sql_console_host {
+    overflow-y: auto !important;
+}
+
+.o_moveo_sql_console_action {
+    --moveo-sql-console-page-bg: rgb(27, 29, 38);
+    --moveo-sql-console-page-color: #e5e7eb;
+    --moveo-sql-console-panel-bg: rgb(38, 42, 54);
+    --moveo-sql-console-panel-border: #2b3140;
+    --moveo-sql-console-panel-shadow:
+        0 18px 40px -28px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    --moveo-sql-console-label-color: #f3f4f6;
+    --moveo-sql-console-muted-color: #94a3b8;
+    --moveo-sql-console-input-bg: #0d1016;
+    --moveo-sql-console-input-color: #f8fafc;
+    --moveo-sql-console-input-border: #343b4d;
+    --moveo-sql-console-input-focus-bg: #0b0e14;
+    --moveo-sql-console-input-focus-border: #38bdf8;
+    --moveo-sql-console-input-focus-shadow: 0 0 0 4px rgba(56, 189, 248, 0.14);
+    --moveo-sql-console-placeholder: #7c8798;
+    --moveo-sql-console-query-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+    --moveo-sql-console-badge-bg: transparent;
+    --moveo-sql-console-badge-border: #31384a;
+    --moveo-sql-console-badge-color: #cbd5e1;
+    --moveo-sql-console-alert-danger-bg: rgba(220, 38, 38, 0.12);
+    --moveo-sql-console-alert-danger-border: rgba(248, 113, 113, 0.28);
+    --moveo-sql-console-alert-danger-color: #fecaca;
+    --moveo-sql-console-alert-empty-bg: rgba(148, 163, 184, 0.06);
+    --moveo-sql-console-alert-empty-border: #2b3140;
+    --moveo-sql-console-alert-empty-color: #94a3b8;
+    --moveo-sql-console-table-color: #e5e7eb;
+    --moveo-sql-console-table-head-color: #f8fafc;
+    --moveo-sql-console-table-head-border: #31384a;
+    --moveo-sql-console-table-row-color: #dbe4f0;
+    --moveo-sql-console-table-row-border: #252b38;
+    --moveo-sql-console-table-head-bg: transparent;
+    --moveo-sql-console-table-row-even: rgba(255, 255, 255, 0.012);
+    --moveo-sql-console-table-row-hover: rgba(56, 189, 248, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 24px;
+    min-width: 0;
+    min-height: 100%;
+    overflow: visible;
+    background: var(--moveo-sql-console-page-bg);
+    color: var(--moveo-sql-console-page-color);
+
+    &.o_moveo_sql_console_theme_light {
+        --moveo-sql-console-page-bg: var(--bs-body-bg);
+        --moveo-sql-console-page-color: var(--bs-body-color);
+        --moveo-sql-console-panel-bg: #eceff3;
+        --moveo-sql-console-panel-border: #c3cad3;
+        --moveo-sql-console-panel-shadow:
+            0 16px 34px -24px rgba(15, 23, 42, 0.14),
+            0 3px 10px -6px rgba(15, 23, 42, 0.08);
+        --moveo-sql-console-label-color: var(--bs-emphasis-color);
+        --moveo-sql-console-muted-color: var(--bs-secondary-color);
+        --moveo-sql-console-input-bg: #d8dde4;
+        --moveo-sql-console-input-color: var(--bs-body-color);
+        --moveo-sql-console-input-border: #b5bec9;
+        --moveo-sql-console-input-focus-bg: #e3e8ee;
+        --moveo-sql-console-input-focus-border: var(--bs-primary);
+        --moveo-sql-console-input-focus-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.18);
+        --moveo-sql-console-placeholder: var(--bs-secondary-color);
+        --moveo-sql-console-query-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.5),
+            0 1px 2px rgba(15, 23, 42, 0.05);
+        --moveo-sql-console-badge-bg: #f7f8fa;
+        --moveo-sql-console-badge-border: #adb7c3;
+        --moveo-sql-console-badge-color: var(--bs-emphasis-color);
+        --moveo-sql-console-alert-danger-bg: #f8d7da;
+        --moveo-sql-console-alert-danger-border: #f1aeb5;
+        --moveo-sql-console-alert-danger-color: #842029;
+        --moveo-sql-console-alert-empty-bg: #f7f8fa;
+        --moveo-sql-console-alert-empty-border: #c3cad3;
+        --moveo-sql-console-alert-empty-color: var(--bs-secondary-color);
+        --moveo-sql-console-table-color: var(--bs-body-color);
+        --moveo-sql-console-table-head-color: var(--bs-emphasis-color);
+        --moveo-sql-console-table-head-border: #bcc5cf;
+        --moveo-sql-console-table-row-color: var(--bs-body-color);
+        --moveo-sql-console-table-row-border: #d0d7df;
+        --moveo-sql-console-table-head-bg: #dde2e8;
+        --moveo-sql-console-table-row-even: #f7f9fb;
+        --moveo-sql-console-table-row-hover: #e6edf5;
+    }
+
+    .moveo-btn {
+        min-height: 42px;
+        padding: 0 16px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition:
+            transform 0.18s ease,
+            border-color 0.18s ease,
+            background-color 0.18s ease,
+            box-shadow 0.18s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+        }
+    }
+
+    .o_moveo_sql_console_toolbar,
+    .o_moveo_sql_console_editor,
+    .o_moveo_sql_console_result_panel {
+        min-width: 0;
+        max-width: 100%;
+        background: var(--moveo-sql-console-panel-bg);
+        border: 1px solid var(--moveo-sql-console-panel-border);
+        border-radius: 16px;
+        box-shadow: var(--moveo-sql-console-panel-shadow);
+        backdrop-filter: blur(8px);
+        transition: all 0.2s ease;
+        &:hover {
+                transform: scale(1.01);
+            }
+    }
+
+    .o_moveo_sql_console_toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 16px;
+        padding: 16px 18px;
+    }
+
+    .o_moveo_sql_console_controls {
+        min-width: 180px;
+
+        .form-label {
+            margin-bottom: 8px;
+            color: var(--moveo-sql-console-label-color);
+            font-weight: 600;
+        }
+
+        .text-body-secondary {
+            color: var(--moveo-sql-console-muted-color) !important;
+        }
+
+        .form-control {
+            min-height: 46px;
+            border-radius: 12px;
+            border: 1px solid var(--moveo-sql-console-input-border);
+            background: var(--moveo-sql-console-input-bg);
+            color: var(--moveo-sql-console-input-color);
+            box-shadow: none;
+
+            &:focus {
+                border-color: var(--moveo-sql-console-input-focus-border);
+                background: var(--moveo-sql-console-input-focus-bg);
+                box-shadow: var(--moveo-sql-console-input-focus-shadow);
+            }
+
+            &[type="number"] {
+                appearance: textfield;
+                -moz-appearance: textfield;
+
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .o_moveo_sql_console_buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .o_moveo_sql_console_editor {
+        display: flex;
+        flex-direction: column;
+        padding: 18px;
+
+        .form-label {
+            margin-bottom: 10px;
+            color: var(--moveo-sql-console-label-color);
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+    }
+
+    .o_moveo_sql_console_query {
+        min-height: 80px;
+        padding: 16px 18px;
+        border-radius: 14px;
+        border: 1px solid var(--moveo-sql-console-input-border);
+        background: var(--moveo-sql-console-input-bg);
+        color: var(--moveo-sql-console-input-color);
+        font-family: Consolas, "SFMono-Regular", "Courier New", monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        resize: vertical;
+        box-shadow: var(--moveo-sql-console-query-shadow);
+
+        &::placeholder {
+            color: var(--moveo-sql-console-placeholder);
+            opacity: 1;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: var(--moveo-sql-console-input-focus-shadow);
+        }
+    }
+
+    .o_moveo_sql_console_meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .badge {
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: var(--moveo-sql-console-badge-bg) !important;
+            border-color: var(--moveo-sql-console-badge-border) !important;
+            color: var(--moveo-sql-console-badge-color) !important;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+
+    .alert-danger,
+    .alert-light {
+        margin: 0;
+        border-radius: 14px;
+        padding: 14px 16px;
+    }
+
+    .alert-danger {
+        background: var(--moveo-sql-console-alert-danger-bg);
+        border: 1px solid var(--moveo-sql-console-alert-danger-border);
+        color: var(--moveo-sql-console-alert-danger-color);
+    }
+
+    .o_moveo_sql_console_empty {
+        background: var(--moveo-sql-console-alert-empty-bg);
+        border: 1px solid var(--moveo-sql-console-alert-empty-border);
+        color: var(--moveo-sql-console-alert-empty-color);
+    }
+
+    .o_moveo_sql_console_result_panel {
+        overflow-x: hidden;
+        overflow-y: visible;
+        padding: 1px;
+    }
+
+    .o_moveo_sql_console_result {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .o_moveo_sql_console_scroller {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-radius: 15px;
+    }
+
+    .o_moveo_sql_console_scroller table {
+        width: max-content;
+        min-width: 100%;
+        max-width: none;
+        margin: 0;
+        border-collapse: separate;
+        border-spacing: 0;
+        white-space: nowrap;
+        color: var(--moveo-sql-console-table-color);
+
+        thead th {
+            background: var(--moveo-sql-console-table-head-bg);
+            color: var(--moveo-sql-console-table-head-color);
+            font-weight: 700;
+            padding: 12px 16px;
+            border-top: none;
+            border-bottom: 1px solid var(--moveo-sql-console-table-head-border);
+        }
+
+        tbody td,
+        tbody th {
+            padding: 10px 16px;
+            color: var(--moveo-sql-console-table-row-color);
+            border-bottom: 1px solid var(--moveo-sql-console-table-row-border);
+            background: transparent;
+            box-shadow: none;
+        }
+
+        tbody tr:nth-child(even) td,
+        tbody tr:nth-child(even) th {
+            background: var(--moveo-sql-console-table-row-even);
+        }
+
+        tbody tr:hover td,
+        tbody tr:hover th {
+            background: var(--moveo-sql-console-table-row-hover);
+        }
+
+        thead tr:first-child th:first-child {
+            border-top-left-radius: 15px;
+        }
+
+        thead tr:first-child th:last-child {
+            border-top-right-radius: 15px;
+        }
+    }
+
+    .o_moveo_sql_console_scroller th,
+    .o_moveo_sql_console_scroller td {
+        max-width: 24rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: top;
+    }
+
+    .o_moveo_sql_console_scroller th:first-child {
+        width: 3.5rem;
+        max-width: 3.5rem;
+        text-align: right;
+    }
+}

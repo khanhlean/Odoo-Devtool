@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="local_debug.LocalDebugUserMenu">
+        <t t-if="shouldRender">
+            <div role="separator" class="dropdown-divider"/>
+            <div class="dropdown-header text-uppercase text-muted small d-flex align-items-center justify-content-between">
+                <span>Local Debug</span>
+            </div>
+            
+            <div class="px-3 pb-2">
+                <input type="text"
+                       class="form-control form-control-sm"
+                       placeholder="Search user..."
+                       t-on-input="onSearchInput"
+                       t-on-keydown.stop=""
+                       t-on-click.stop=""
+                       t-key="'debug_user_search'"/>
+            </div>
+
+            <div t-ref="userList" style="max-height: 28rem; overflow-y: auto;">
+                <div class="dropdown-header pt-0 debug-internal-header">Internal Users</div>
+                <DropdownItem
+                    t-foreach="state.internalUsers"
+                    t-as="user"
+                    t-key="'internal_' + user.id"
+                    class="`debug-user-item debug-internal-user ${user.current ? 'selected' : ''}`"
+                    onSelected="() => this.switchUser(user.id)"
+                >
+                    <div class="d-flex flex-column py-1 w-100 debug-user-data"
+                         t-att-data-search="user.name.toLowerCase() + ' ' + user.login.toLowerCase()">
+                        <span class="text-truncate" t-esc="user.name"/>
+                        <small class="text-muted font-monospace text-truncate" t-esc="user.login"/>
+                    </div>
+                </DropdownItem>
+
+                <t t-if="shouldShowPortal">
+                    <div class="dropdown-header border-top mt-1 pt-2 debug-portal-header">Portal Users</div>
+                    <DropdownItem
+                        t-foreach="state.portalUsers"
+                        t-as="user"
+                        t-key="'portal_' + user.id"
+                        class="`debug-user-item debug-portal-user ${user.current ? 'selected' : ''}`"
+                        onSelected="() => this.switchUser(user.id)"
+                    >
+                        <div class="d-flex flex-column py-1 w-100 debug-user-data"
+                             t-att-data-search="user.name.toLowerCase() + ' ' + user.login.toLowerCase()">
+                            <span class="text-truncate" t-esc="user.name"/>
+                            <small class="text-muted font-monospace text-truncate" t-esc="user.login"/>
+                        </div>
+                    </DropdownItem>
+                </t>
+            </div>
+        </t>
+    </t>
+</templates>

@@ -1,0 +1,7 @@
+/* 
+   Safety Reset: Standard containment to improve layout performance
+   without interfering with Odoo's calculation logic.
+*/
+.odoo_editor .odoo-editor-editable > * {
+    contain: layout style;
+}

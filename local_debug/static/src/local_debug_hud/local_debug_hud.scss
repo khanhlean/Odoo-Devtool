@@ -1,0 +1,807 @@
+.o_local_debug_strip {
+    --o-local-debug-collapse-border: rgba(255, 193, 7, 0.18);
+    --o-local-debug-collapse-bg: rgba(0, 0, 0, 0.5);
+    --o-local-debug-collapse-color: #fff4d1;
+    --o-local-debug-collapse-shadow: 0 0.35rem 0.8rem rgba(0, 0, 0, 0.18);
+    --o-local-debug-collapse-border-hover: rgba(255, 193, 7, 0.32);
+    --o-local-debug-collapse-bg-hover: rgba(255, 193, 7, 0.14);
+    --o-local-debug-collapse-color-hover: #fff7df;
+    --o-local-debug-badge-border: rgba(255, 255, 255, 0.08);
+    --o-local-debug-badge-bg: rgba(255, 255, 255, 0.06);
+    --o-local-debug-badge-color: #f8f3df;
+    --o-local-debug-badge-muted-border: rgba(255, 255, 255, 0.08);
+    --o-local-debug-badge-muted-bg: rgba(255, 255, 255, 0.05);
+    --o-local-debug-badge-muted-color: rgba(248, 243, 223, 0.82);
+    --o-local-debug-badge-info-border: rgba(13, 202, 240, 0.22);
+    --o-local-debug-badge-info-bg: rgba(13, 202, 240, 0.12);
+    --o-local-debug-badge-info-color: #8ee9ff;
+    --o-local-debug-badge-success-border: rgba(25, 135, 84, 0.24);
+    --o-local-debug-badge-success-bg: rgba(25, 135, 84, 0.16);
+    --o-local-debug-badge-success-color: #8cf0b2;
+    --o-local-debug-badge-warning-border: rgba(255, 193, 7, 0.24);
+    --o-local-debug-badge-warning-bg: rgba(255, 193, 7, 0.16);
+    --o-local-debug-badge-warning-color: #ffd979;
+    --o-local-debug-badge-danger-border: rgba(220, 53, 69, 0.22);
+    --o-local-debug-badge-danger-bg: rgba(220, 53, 69, 0.14);
+    --o-local-debug-badge-danger-color: #ffb3bc;
+    --o-local-debug-badge-neutral-border: rgba(173, 181, 189, 0.18);
+    --o-local-debug-badge-neutral-bg: rgba(173, 181, 189, 0.12);
+    --o-local-debug-badge-neutral-color: #d7dde5;
+    --o-local-debug-help-trigger-bg: rgba(255, 255, 255, 0.06);
+    --o-local-debug-help-trigger-color: rgba(255, 244, 209, 0.88);
+    --o-local-debug-help-trigger-bg-hover: rgba(255, 193, 7, 0.16);
+    --o-local-debug-help-trigger-color-hover: #fff7df;
+    --o-local-debug-help-popover-border: rgba(255, 193, 7, 0.18);
+    --o-local-debug-help-popover-bg: rgba(12, 16, 23, 0.96);
+    --o-local-debug-help-popover-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+    --o-local-debug-help-popover-color: #f8f3df;
+    --o-local-debug-help-title-color: #ffd979;
+    --o-local-debug-help-code-bg: rgba(255, 255, 255, 0.08);
+    --o-local-debug-help-code-color: #fff7df;
+    --o-local-debug-metric-border: rgba(255, 193, 7, 0.14);
+    --o-local-debug-metric-bg: rgba(255, 193, 7, 0.06);
+    --o-local-debug-metric-color: #ffd979;
+    --o-local-debug-metric-loading-border: rgba(255, 193, 7, 0.32);
+    --o-local-debug-metric-loading-bg: rgba(255, 193, 7, 0.12);
+    --o-local-debug-chip-border: rgba(255, 193, 7, 0.14);
+    --o-local-debug-chip-bg: rgba(0, 0, 0, 0.4);
+    --o-local-debug-chip-color: #fff4d1;
+    --o-local-debug-chip-shadow: none;
+    --o-local-debug-chip-bg-hover: rgba(255, 193, 7, 0.1);
+    --o-local-debug-chip-border-hover: rgba(255, 193, 7, 0.24);
+    --o-local-debug-chip-color-hover: #fff7df;
+    --o-local-debug-chip-chatter-on-border: rgba(25, 135, 84, 0.24);
+    --o-local-debug-chip-chatter-on-bg: rgba(25, 135, 84, 0.14);
+    --o-local-debug-chip-chatter-on-color: #d8ffe4;
+    --o-local-debug-chip-chatter-on-bg-hover: rgba(25, 135, 84, 0.2);
+    --o-local-debug-chip-chatter-on-border-hover: rgba(25, 135, 84, 0.34);
+    --o-local-debug-chip-chatter-off-border: rgba(220, 53, 69, 0.24);
+    --o-local-debug-chip-chatter-off-bg: rgba(220, 53, 69, 0.16);
+    --o-local-debug-chip-chatter-off-color: #ffd7dd;
+    --o-local-debug-chip-chatter-off-bg-hover: rgba(220, 53, 69, 0.22);
+    --o-local-debug-chip-chatter-off-border-hover: rgba(220, 53, 69, 0.34);
+    --o-local-debug-copy-icon-color: inherit;
+    --o-local-debug-chip-action-bg: rgba(255, 255, 255, 0.04);
+    --o-local-debug-chip-action-bg-hover: rgba(255, 193, 7, 0.14);
+    --o-local-debug-chip-action-color-hover: #fff7df;
+    --o-local-debug-chip-action-active-bg: rgba(255, 193, 7, 0.2);
+    --o-local-debug-chip-action-active-color: #fff7df;
+    --o-local-debug-chip-action-active-shadow: inset 0 0 0 1px rgba(255, 193, 7, 0.18);
+    --o-local-debug-switch-panel-border: rgba(255, 193, 7, 0.14);
+    --o-local-debug-switch-panel-bg: rgba(0, 0, 0, 0.9);
+    --o-local-debug-switch-panel-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+    --o-local-debug-switch-panel-color: #fff4d1;
+    --o-local-debug-switch-title-color: rgba(255, 244, 209, 0.78);
+    --o-local-debug-key-color: rgba(255, 244, 209, 0.72);
+    --o-local-debug-hint-color: rgba(255, 244, 209, 0.7);
+    --o-local-debug-nplusone-border: rgba(220, 53, 69, 0.26);
+    --o-local-debug-nplusone-bg: rgba(220, 53, 69, 0.16);
+    --o-local-debug-nplusone-color: #ffb3bc;
+    --o-local-debug-nplusone-bg-hover: rgba(220, 53, 69, 0.24);
+    --o-local-debug-nplusone-color-hover: #ffd7dd;
+    position: relative;
+    z-index: 1010;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    align-items: center;
+    transition: grid-template-rows 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.o_local_debug_strip.o_local_debug_theme_light {
+    --o-local-debug-collapse-border: rgba(0, 0, 0, 0.15);
+    --o-local-debug-collapse-bg: rgba(241, 245, 249, 0.96);
+    --o-local-debug-collapse-color: #0f172a;
+    --o-local-debug-collapse-shadow: 0 0.35rem 0.85rem rgba(15, 23, 42, 0.1);
+    --o-local-debug-collapse-border-hover: rgba(100, 116, 139, 0.45);
+    --o-local-debug-collapse-bg-hover: rgba(226, 232, 240, 0.95);
+    --o-local-debug-collapse-color-hover: #000000;
+    --o-local-debug-badge-border: rgba(148, 163, 184, 0.4);
+    --o-local-debug-badge-bg: rgba(248, 250, 252, 0.92);
+    --o-local-debug-badge-color: #0f172a;
+    --o-local-debug-badge-muted-border: rgba(148, 163, 184, 0.32);
+    --o-local-debug-badge-muted-bg: rgba(241, 245, 249, 0.92);
+    --o-local-debug-badge-muted-color: rgba(51, 65, 85, 0.86);
+    --o-local-debug-badge-info-border: rgba(13, 202, 240, 0.28);
+    --o-local-debug-badge-info-bg: rgba(13, 202, 240, 0.15);
+    --o-local-debug-badge-info-color: #087990;
+    --o-local-debug-badge-success-border: rgba(25, 135, 84, 0.28);
+    --o-local-debug-badge-success-bg: rgba(25, 135, 84, 0.15);
+    --o-local-debug-badge-success-color: #145a32;
+    --o-local-debug-badge-warning-border: rgba(255, 193, 7, 0.35);
+    --o-local-debug-badge-warning-bg: rgba(255, 193, 7, 0.18);
+    --o-local-debug-badge-warning-color: #664d03;
+    --o-local-debug-badge-danger-border: rgba(220, 53, 69, 0.24);
+    --o-local-debug-badge-danger-bg: rgba(220, 53, 69, 0.12);
+    --o-local-debug-badge-danger-color: #842029;
+    --o-local-debug-badge-neutral-border: rgba(173, 181, 189, 0.24);
+    --o-local-debug-badge-neutral-bg: rgba(173, 181, 189, 0.15);
+    --o-local-debug-badge-neutral-color: #495057;
+    --o-local-debug-help-trigger-bg: rgba(226, 232, 240, 0.9);
+    --o-local-debug-help-trigger-color: #334155;
+    --o-local-debug-help-trigger-bg-hover: rgba(203, 213, 225, 0.95);
+    --o-local-debug-help-trigger-color-hover: #000000;
+    --o-local-debug-help-popover-border: rgba(148, 163, 184, 0.45);
+    --o-local-debug-help-popover-bg: rgba(255, 255, 255, 0.98);
+    --o-local-debug-help-popover-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+    --o-local-debug-help-popover-color: #1f2937;
+    --o-local-debug-help-title-color: #b28000;
+    --o-local-debug-help-code-bg: rgba(226, 232, 240, 0.72);
+    --o-local-debug-help-code-color: #0f172a;
+    --o-local-debug-metric-border: rgba(245, 158, 11, 0.42);
+    --o-local-debug-metric-bg: rgba(255, 251, 235, 0.96);
+    --o-local-debug-metric-color: #78350f;
+    --o-local-debug-metric-loading-border: rgba(245, 158, 11, 0.52);
+    --o-local-debug-metric-loading-bg: rgba(254, 243, 199, 0.96);
+    --o-local-debug-chip-border: rgba(148, 163, 184, 0.42);
+    --o-local-debug-chip-bg: rgba(248, 250, 252, 0.96);
+    --o-local-debug-chip-color: #0f172a;
+    --o-local-debug-chip-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+    --o-local-debug-chip-bg-hover: rgba(241, 245, 249, 0.98);
+    --o-local-debug-chip-border-hover: rgba(100, 116, 139, 0.42);
+    --o-local-debug-chip-color-hover: #000000;
+    --o-local-debug-chip-chatter-on-border: rgba(25, 135, 84, 0.28);
+    --o-local-debug-chip-chatter-on-bg: rgba(25, 135, 84, 0.1);
+    --o-local-debug-chip-chatter-on-color: #145a32;
+    --o-local-debug-chip-chatter-on-bg-hover: rgba(25, 135, 84, 0.16);
+    --o-local-debug-chip-chatter-on-border-hover: rgba(25, 135, 84, 0.35);
+    --o-local-debug-chip-chatter-off-border: rgba(220, 53, 69, 0.24);
+    --o-local-debug-chip-chatter-off-bg: rgba(220, 53, 69, 0.08);
+    --o-local-debug-chip-chatter-off-color: #842029;
+    --o-local-debug-chip-chatter-off-bg-hover: rgba(220, 53, 69, 0.14);
+    --o-local-debug-chip-chatter-off-border-hover: rgba(220, 53, 69, 0.32);
+    --o-local-debug-copy-icon-color: #334155;
+    --o-local-debug-chip-action-bg: rgba(226, 232, 240, 0.92);
+    --o-local-debug-chip-action-bg-hover: rgba(203, 213, 225, 0.95);
+    --o-local-debug-chip-action-color-hover: #000000;
+    --o-local-debug-chip-action-active-bg: rgba(254, 240, 138, 0.72);
+    --o-local-debug-chip-action-active-color: #713f12;
+    --o-local-debug-chip-action-active-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.35);
+    --o-local-debug-switch-panel-border: rgba(148, 163, 184, 0.42);
+    --o-local-debug-switch-panel-bg: rgba(255, 255, 255, 0.98);
+    --o-local-debug-switch-panel-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
+    --o-local-debug-switch-panel-color: #0f172a;
+    --o-local-debug-switch-title-color: rgba(51, 65, 85, 0.9);
+    --o-local-debug-key-color: rgba(51, 65, 85, 0.88);
+    --o-local-debug-hint-color: rgba(71, 85, 105, 0.88);
+    --o-local-debug-nplusone-border: rgba(239, 68, 68, 0.32);
+    --o-local-debug-nplusone-bg: rgba(254, 242, 242, 0.98);
+    --o-local-debug-nplusone-color: #991b1b;
+    --o-local-debug-nplusone-bg-hover: rgba(254, 226, 226, 0.98);
+    --o-local-debug-nplusone-color-hover: #7f1d1d;
+}
+
+.o_local_debug_strip_inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    width: 100%;
+    min-height: 0;
+    gap: 0.625rem;
+    flex-wrap: wrap;
+    padding: 0.4rem 0.85rem;
+    overflow: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transform-origin: top center;
+    transition:
+        padding-top 240ms cubic-bezier(0.22, 1, 0.36, 1),
+        padding-bottom 240ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 150ms ease-out,
+        transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.o_local_debug_strip--collapsed {
+    grid-template-rows: minmax(0, 0fr) auto;
+}
+
+.o_local_debug_strip--collapsed .o_local_debug_strip_inner {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    min-height: 0;
+    overflow: clip;
+    opacity: 0;
+    transform: translateY(-0.2rem) scaleY(0.98);
+    pointer-events: none;
+}
+
+.o_local_debug_collapse_toggle {
+    position: relative;
+    z-index: 1;
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.05rem;
+    height: 1.35rem;
+    margin: -0.08rem 0 0.18rem;
+    padding: 0;
+    border: 1px solid var(--o-local-debug-collapse-border);
+    border-radius: 0 0 0.55rem 0.55rem;
+    background: var(--o-local-debug-collapse-bg);
+    color: var(--o-local-debug-collapse-color);
+    box-shadow: var(--o-local-debug-collapse-shadow);
+    cursor: pointer;
+    justify-self: center;
+    align-self: center;
+    transition:
+        transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 180ms ease,
+        background-color 180ms ease,
+        color 180ms ease,
+        box-shadow 180ms ease;
+    will-change: transform;
+}
+
+.o_local_debug_collapse_toggle:hover,
+.o_local_debug_collapse_toggle:focus-visible {
+    border-color: var(--o-local-debug-collapse-border-hover);
+    background: var(--o-local-debug-collapse-bg-hover);
+    color: var(--o-local-debug-collapse-color-hover);
+    transform: scale(1.04);
+    outline: none;
+}
+
+.o_local_debug_strip--collapsed {
+    background: $o-navbar-background;
+    border-bottom: $o-navbar-border-bottom;
+}
+
+.o_home_menu_background .o_local_debug_strip--collapsed,
+.o_home_menu .o_local_debug_strip--collapsed {
+    background: transparent !important;
+    border-bottom: none !important;
+}
+
+.o_local_debug_strip--collapsed .o_local_debug_collapse_toggle {
+    margin-top: 0.18rem;
+    border-radius: 0.55rem;
+}
+
+.o_local_debug_runtime {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.o_local_debug_badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.22rem 0.55rem;
+    border: 1px solid var(--o-local-debug-badge-border);
+    border-radius: 999px;
+    background: var(--o-local-debug-badge-bg);
+    color: var(--o-local-debug-badge-color);
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.o_local_debug_badge_key {
+    opacity: 0.72;
+}
+
+.o_local_debug_badge_value {
+    font-family: var(--bs-font-monospace);
+    letter-spacing: 0.04em;
+    text-transform: none;
+}
+
+.o_local_debug_badge--muted {
+    border-color: var(--o-local-debug-badge-muted-border);
+    background: var(--o-local-debug-badge-muted-bg);
+    color: var(--o-local-debug-badge-muted-color);
+}
+
+.o_local_debug_badge--info {
+    border-color: var(--o-local-debug-badge-info-border);
+    background: var(--o-local-debug-badge-info-bg);
+    color: var(--o-local-debug-badge-info-color);
+}
+
+.o_local_debug_badge--success {
+    border-color: var(--o-local-debug-badge-success-border);
+    background: var(--o-local-debug-badge-success-bg);
+    color: var(--o-local-debug-badge-success-color);
+}
+
+.o_local_debug_badge--warning {
+    border-color: var(--o-local-debug-badge-warning-border);
+    background: var(--o-local-debug-badge-warning-bg);
+    color: var(--o-local-debug-badge-warning-color);
+}
+
+.o_local_debug_badge--danger {
+    border-color: var(--o-local-debug-badge-danger-border);
+    background: var(--o-local-debug-badge-danger-bg);
+    color: var(--o-local-debug-badge-danger-color);
+}
+
+.o_local_debug_badge--neutral {
+    border-color: var(--o-local-debug-badge-neutral-border);
+    background: var(--o-local-debug-badge-neutral-bg);
+    color: var(--o-local-debug-badge-neutral-color);
+}
+
+.o_local_debug_help {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.o_local_debug_help_trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: var(--o-local-debug-help-trigger-bg);
+    color: var(--o-local-debug-help-trigger-color);
+    cursor: help;
+}
+
+.o_local_debug_help_trigger:hover,
+.o_local_debug_help_trigger:focus-visible {
+    background: var(--o-local-debug-help-trigger-bg-hover);
+    color: var(--o-local-debug-help-trigger-color-hover);
+    outline: none;
+}
+
+.o_local_debug_help_popover {
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    z-index: 1060;
+    display: none;
+    width: 32rem;
+    max-width: calc(100vw - 2rem);
+    padding: 0.8rem 0.9rem;
+    border: 1px solid var(--o-local-debug-help-popover-border);
+    border-radius: 0.75rem;
+    background: var(--o-local-debug-help-popover-bg);
+    box-shadow: var(--o-local-debug-help-popover-shadow);
+    color: var(--o-local-debug-help-popover-color);
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+.o_local_debug_help:hover .o_local_debug_help_popover,
+.o_local_debug_help:focus-within .o_local_debug_help_popover {
+    display: block;
+}
+
+.o_local_debug_help--panel {
+    margin-left: auto;
+}
+
+.o_local_debug_help--panel .o_local_debug_help_popover {
+    top: calc(100% + 0.45rem);
+    left: auto;
+}
+
+.o_local_debug_help_title {
+    margin-bottom: 0.45rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--o-local-debug-help-title-color);
+}
+
+.o_local_debug_help_line + .o_local_debug_help_line {
+    margin-top: 0.35rem;
+}
+
+.o_local_debug_help_line code {
+    padding: 0.08rem 0.28rem;
+    border-radius: 0.3rem;
+    background: var(--o-local-debug-help-code-bg);
+    color: var(--o-local-debug-help-code-color);
+}
+
+.o_local_debug_metric,
+.o_local_debug_chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-width: 0;
+    max-width: 30rem!important;
+    border-radius: 0.65rem;
+    font-size: 0.79rem;
+    line-height: 1.15;
+    height: 2.1rem;
+    transition: all 0.2s ease;
+    &:hover {
+        transform: scale(1.04);
+    }
+}
+
+.o_local_debug_metric {
+    padding: 0.38rem 0.7rem;
+    border: 1px solid var(--o-local-debug-metric-border);
+    background: var(--o-local-debug-metric-bg);
+    color: var(--o-local-debug-metric-color);
+    transition: all 0.2s ease;
+
+    &--loading {
+        animation: local-debug-pulse 1.5s infinite ease-in-out;
+        border-color: var(--o-local-debug-metric-loading-border);
+        background: var(--o-local-debug-metric-loading-bg);
+    }
+}
+
+.o_local_debug_nplusone_button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    min-height: 1.35rem;
+    padding: 0 0.38rem;
+    border: 1px solid var(--o-local-debug-nplusone-border);
+    border-radius: 0.4rem;
+    background: var(--o-local-debug-nplusone-bg);
+    color: var(--o-local-debug-nplusone-color);
+    font-family: var(--bs-font-monospace);
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.o_local_debug_nplusone_button:hover,
+.o_local_debug_nplusone_button:focus-visible {
+    background: var(--o-local-debug-nplusone-bg-hover);
+    color: var(--o-local-debug-nplusone-color-hover);
+    outline: none;
+}
+
+@keyframes local-debug-pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.65;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.o_local_debug_debug_switch {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.32rem;
+    flex: 0 0 auto;
+    max-width: 100%;
+}
+
+.o_local_debug_chip {
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.38rem 0.72rem;
+    border: 1px solid var(--o-local-debug-chip-border);
+    background: var(--o-local-debug-chip-bg) !important;
+    color: var(--o-local-debug-chip-color);
+    text-align: left;
+    box-shadow: var(--o-local-debug-chip-shadow);
+    cursor: pointer !important;
+}
+
+.o_local_debug_chip:hover,
+.o_local_debug_chip:focus-visible {
+    background: var(--o-local-debug-chip-bg-hover) !important;
+    border-color: var(--o-local-debug-chip-border-hover);
+    color: var(--o-local-debug-chip-color-hover);
+}
+
+.o_local_debug_chip--static {
+    cursor: default;
+}
+
+.o_local_debug_chip--toggle {
+    cursor: pointer !important;
+}
+
+.o_local_debug_chip--chatter-on {
+    border-color: var(--o-local-debug-chip-chatter-on-border);
+    background: var(--o-local-debug-chip-chatter-on-bg) !important;
+    color: var(--o-local-debug-chip-chatter-on-color);
+}
+
+.o_local_debug_chip--chatter-on:hover,
+.o_local_debug_chip--chatter-on:focus-visible {
+    background: var(--o-local-debug-chip-chatter-on-bg-hover) !important;
+    border-color: var(--o-local-debug-chip-chatter-on-border-hover);
+}
+
+.o_local_debug_chip--chatter-off {
+    border-color: var(--o-local-debug-chip-chatter-off-border);
+    background: var(--o-local-debug-chip-chatter-off-bg) !important;
+    color: var(--o-local-debug-chip-chatter-off-color);
+}
+
+.o_local_debug_chip--chatter-off:hover,
+.o_local_debug_chip--chatter-off:focus-visible {
+    background: var(--o-local-debug-chip-chatter-off-bg-hover) !important;
+    border-color: var(--o-local-debug-chip-chatter-off-border-hover);
+}
+
+.o_local_debug_sync_dot {
+    display: inline-flex;
+    flex: 0 0 auto;
+    width: 0.62rem;
+    height: 0.62rem;
+    border-radius: 999px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.o_local_debug_sync_dot--live {
+    background: #3ad37a;
+    box-shadow:
+        0 0 0 1px rgba(58, 211, 122, 0.18),
+        0 0 0.4rem rgba(58, 211, 122, 0.28);
+}
+
+.o_local_debug_sync_dot--reload {
+    background: #ffbf47;
+    box-shadow:
+        0 0 0 1px rgba(255, 191, 71, 0.18),
+        0 0 0.4rem rgba(255, 191, 71, 0.28);
+}
+
+.o_local_debug_chip_body {
+    display: flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.o_local_debug_key {
+    flex: 0 0 auto;
+    color: var(--o-local-debug-key-color);
+    text-transform: uppercase;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.o_local_debug_value {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: var(--bs-font-monospace);
+    font-size: 0.78rem;
+    color: inherit;
+}
+
+.o_local_debug_copy_icon {
+    flex: 0 0 auto;
+    opacity: 0.42;
+    font-size: 0.73rem;
+    color: var(--o-local-debug-copy-icon-color);
+}
+
+.o_local_debug_chip_actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.22rem;
+    margin-left: auto;
+}
+
+.o_local_debug_chip_hint {
+    max-width: 8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--o-local-debug-hint-color);
+    font-family: var(--bs-font-monospace);
+    font-size: 0.67rem;
+}
+
+.o_local_debug_chip_toggle_icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    opacity: 0.78;
+}
+
+.o_local_debug_chip_action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.7rem;
+    height: 1.7rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0.45rem;
+    background: var(--o-local-debug-chip-action-bg);
+    color: inherit;
+    cursor: pointer;
+}
+
+.o_local_debug_chip_action:hover,
+.o_local_debug_chip_action:focus-visible {
+    background: var(--o-local-debug-chip-action-bg-hover);
+    color: var(--o-local-debug-chip-action-color-hover);
+    outline: none;
+}
+
+.o_local_debug_chip_action--label {
+    width: auto;
+    min-width: 2.15rem;
+    padding: 0 0.55rem;
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.o_local_debug_chip_action--active {
+    background: var(--o-local-debug-chip-action-active-bg);
+    color: var(--o-local-debug-chip-action-active-color);
+    box-shadow: var(--o-local-debug-chip-action-active-shadow);
+}
+
+.o_local_debug_debug_switch_panel {
+    position: absolute;
+    top: calc(100% + 0.38rem);
+    left: 0;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.45rem;
+    min-width: 25rem;
+    max-width: calc(100vw - 1.4rem);
+    padding: 0.45rem 0.55rem 0.5rem;
+    border: 1px solid var(--o-local-debug-switch-panel-border);
+    border-radius: 0.65rem;
+    background: var(--o-local-debug-switch-panel-bg);
+    box-shadow: var(--o-local-debug-switch-panel-shadow);
+    color: var(--o-local-debug-switch-panel-color);
+}
+
+.o_local_debug_debug_switch_meta {
+    display: block;
+    width: 100%;
+}
+
+.o_local_debug_debug_switch_header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-width: 0;
+}
+
+.o_local_debug_debug_switch_title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--o-local-debug-switch-title-color);
+}
+
+.o_local_debug_debug_switch_actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.28rem;
+    margin-left: 0;
+    width: 100%;
+}
+
+.o_local_debug_divider {
+    opacity: 0.45;
+}
+
+.o_local_debug_arch_dialog {
+    max-height: 70vh;
+    overflow: auto;
+    padding: 0.9rem;
+    border-radius: 0.6rem;
+    background: rgba(248, 249, 250, 0.9);
+    color: #1f2937;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.o_local_debug_chatter_disabled {
+    .o_form_view,
+    .o_form_sheet_bg {
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .o_local_debug_strip {
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0;
+        padding: 0.35rem 0.55rem;
+    }
+
+    .o_local_debug_strip_inner {
+        display: flex;
+        flex: 1 1 auto;
+        min-height: 0;
+        gap: 0.45rem;
+        width: 100%;
+        padding: 0;
+    }
+
+    .o_local_debug_strip--collapsed {
+        grid-template-rows: minmax(0, 0fr) auto;
+    }
+
+    .o_local_debug_collapse_toggle {
+        margin-bottom: 0;
+    }
+
+    .o_local_debug_runtime {
+        width: 100%;
+    }
+
+    .o_local_debug_chip_body {
+        gap: 0.35rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .o_local_debug_chip_actions {
+        width: 100%;
+        justify-content: flex-end;
+        margin-left: 0;
+    }
+
+    .o_local_debug_debug_switch {
+        width: 100%;
+    }
+
+    .o_local_debug_debug_switch_meta {
+        width: 100%;
+    }
+
+    .o_local_debug_debug_switch_header {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .o_local_debug_help_popover {
+        right: auto;
+        left: 0;
+        z-index: 1060;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .o_local_debug_strip {
+        transition: none;
+    }
+
+    .o_local_debug_strip_inner {
+        transition: none;
+        will-change: auto;
+    }
+
+    .o_local_debug_collapse_toggle {
+        transition: none;
+        will-change: auto;
+    }
+}
+

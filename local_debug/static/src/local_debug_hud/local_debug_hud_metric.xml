@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="local_debug.LocalDebugHUDMetric">
+        <div
+            t-att-class="{'o_local_debug_metric': true, 'o_local_debug_metric--loading': localDebugHud.isLoading}"
+            t-att-title="'Queries: ' + localDebugHud.queries + ' | Client: ' + localDebugHud.time + 'ms | Server: ' + (localDebugHud.isLoading ? 'pending' : localDebugHud.serverTime + 'ms')"
+        >
+            <i class="fa fa-database" title="SQL queries"/>
+            <span class="font-monospace" t-esc="localDebugHud.queries"/>
+            <span class="o_local_debug_divider">|</span>
+            <i class="fa fa-clock-o" title="Client elapsed time"/>
+            <span
+                t-att-class="this.localDebugHudTimeClass"
+            >
+                <t t-esc="localDebugHud.time"/>ms
+            </span>
+            <span class="o_local_debug_divider">|</span>
+            <i class="fa fa-server" title="Accumulated server time"/>
+            <span
+                t-att-class="this.localDebugHudServerTimeClass"
+                t-esc="localDebugHud.isLoading ? '...' : localDebugHud.serverTime + 'ms'"
+            />
+            <t t-if="localDebugHud.nplusone">
+                <span class="o_local_debug_divider">|</span>
+                <button
+                    type="button"
+                    class="o_local_debug_nplusone_button"
+                    t-att-title="'Detected ' + localDebugHud.nplusone + ' N+1 query candidate(s)'"
+                    t-on-click="() => this.openLocalDebugNPlusOneDetail()"
+                >
+                    N+1 <span t-esc="localDebugHud.nplusone"/>
+                </button>
+            </t>
+        </div>
+    </t>
+</templates>

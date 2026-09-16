@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="local_debug.LocalDebugHUDChip">
+        <button
+            type="button"
+            class="o_local_debug_chip"
+            t-att-title="chip_title"
+            t-on-click="() => this.copyLocalDebugValue(chip_value, chip_copy_label)"
+        >
+            <i t-att-class="chip_icon_class"/>
+            <span class="o_local_debug_chip_body">
+                <span class="o_local_debug_key" t-esc="chip_key"/>
+                <span class="o_local_debug_value" t-esc="chip_value"/>
+            </span>
+            <i class="fa fa-copy o_local_debug_copy_icon"/>
+        </button>
+    </t>
+</templates>

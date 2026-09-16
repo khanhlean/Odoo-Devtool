@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t
+        t-name="local_debug.WebClientPatch"
+        t-inherit="web.WebClient"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//ActionContainer" position="before">
+            <t t-if="hudShouldRender">
+                <t t-call="local_debug.LocalDebugHUD"/>
+            </t>
+        </xpath>
+    </t>
+</templates>

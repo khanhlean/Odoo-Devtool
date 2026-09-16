@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="local_debug.LocalDebugViewArchDialog">
+        <Dialog title="'Computed Arch'" size="'lg'">
+            <pre class="o_local_debug_arch_dialog mb-0" t-esc="props.arch"/>
+            <t t-set-slot="footer">
+                <button class="btn btn-secondary" t-on-click="props.close">Close</button>
+            </t>
+        </Dialog>
+    </t>
+</templates>

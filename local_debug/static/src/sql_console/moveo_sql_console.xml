@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="local_debug.MoveoSqlConsole">
+        <div t-att-class="'o_action o_moveo_sql_console_action ' + sqlConsoleThemeClass" t-ref="root">
+            <div class="o_moveo_sql_console_toolbar">
+                <div class="o_moveo_sql_console_controls d-flex gap-2 align-items-end">
+                    <label class="form-label mb-1" for="moveo_sql_console_limit">Limit</label>
+                    <input
+                        id="moveo_sql_console_limit"
+                        class="form-control"
+                        type="number"
+                        min="0"
+                        t-att-value="state.limit"
+                        t-on-input="onInputLimit"
+                    />
+                    <small class="text-body-secondary w-100">0 = load all</small>
+                </div>
+                <div class="o_moveo_sql_console_buttons">
+                    <button
+                        class="btn btn-primary moveo-btn"
+                        type="button"
+                        accesskey="e"
+                        t-on-click="execute"
+                        t-att-disabled="state.loading"
+                    >
+                        <i class="fa fa-play me-1"/>
+                        <t t-esc="state.loading ? 'Executing...' : 'Execute (Alt+E)'"/>
+                    </button>
+                    <button
+                        class="btn btn-secondary moveo-btn"
+                        type="button"
+                        accesskey="r"
+                        t-on-click="clear"
+                        t-att-disabled="state.loading"
+                    >
+                        <i class="fa fa-eraser me-1"/> Clear Result (Alt+R)
+                    </button>
+                </div>
+            </div>
+
+            <div class="o_moveo_sql_console_editor">
+                <label class="form-label mb-1" for="moveo_sql_console_query">SQL</label>
+                <textarea
+                    id="moveo_sql_console_query"
+                    class="form-control o_moveo_sql_console_query"
+                    placeholder="SELECT * FROM res_partner LIMIT 100"
+                    t-on-input="onInputQuery"
+                ><t t-esc="state.query || 'SELECT * FROM res_partner LIMIT 100'"/></textarea>
+            </div>
+
+            <div class="o_moveo_sql_console_meta">
+                <span class="badge border bg-body-tertiary text-body-secondary">Duration: <t t-esc="state.durationMs"/> ms</span>
+                <span class="badge border bg-body-tertiary text-body-secondary">Rowcount: <t t-esc="state.rowcount"/></span>
+            </div>
+
+            <div t-if="state.error" class="alert alert-danger" role="alert">
+                <t t-esc="state.error"/>
+            </div>
+
+            <div class="o_moveo_sql_console_result_panel">
+                <div t-if="hasRows" class="o_moveo_sql_console_result">
+                    <div class="o_moveo_sql_console_scroller">
+                        <table class="table table-sm table-hover table-striped table-bordered align-middle mb-0 o_moveo_sql_console_table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-body-secondary">#</th>
+                                    <t t-foreach="state.headers" t-as="header" t-key="header_index" t-foreach-index="header_index">
+                                        <th scope="col" t-att-title="header"><t t-esc="header"/></th>
+                                    </t>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="state.rows" t-as="row" t-key="row_index" t-foreach-index="row_index">
+                                    <tr>
+                                        <th scope="row" class="text-body-secondary"><t t-esc="row_index + 1"/></th>
+                                        <t t-foreach="row" t-as="cell" t-key="cell_index" t-foreach-index="cell_index">
+                                            <td t-att-title="cell === null ? '' : cell"><t t-esc="cell === null ? '' : cell"/></td>
+                                        </t>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div t-elif="hasEmptyResult" class="alert alert-light mb-0 o_moveo_sql_console_empty" role="status">
+                    No rows returned.
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,20 @@
+.o_main_navbar .o_switch_company_menu button {
+    max-width: 7.5rem;
+}
+
+.o_main_navbar .o_switch_company_menu .oe_topbar_name {
+    max-width: 5.5rem;
+}
+
+.o_main_navbar .o_user_menu .oe_topbar_name {
+    display: inline-block !important;
+    max-width: 14rem;
+}
+
+.o_main_navbar .o_user_menu .oe_topbar_name mark {
+    font-size: 0.72rem;
+}
+
+.o_local_debug_snapshot_value {
+    word-break: break-word;
+}
